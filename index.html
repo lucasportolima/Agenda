@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Meus pacientes</title>
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body>
+    <header>
+      <div class="">
+        <h1>Meus pacientes</h1>
+      </div>
+    </header>
+    <main class="">
+      <section>
+        <h2>Meus pacientes</h2>
+        <table id="pacientes">
+          <tr>
+            <th>Nome</th>
+            <th>Peso(kg)</th>
+            <th>Altura(m)</th>
+            <th>IMC</th>
+          </tr>
+          <tr id="paciente">
+            <td id="info-nome"></td>
+            <td id="info-peso"></td>
+            <td id="info-altura"></td>
+            <td id="info-imc"></td>
+          </tr>
+        </table>
+        <button id="calcula-imcs" class="botao">Calcular Imcs</button>
+      </section>
+      <section>
+        <h2>Adicionar novo paciente</h2>
+        <form>
+          <fieldset>
+            <label for="nome">Nome:</label>
+            <input id="campo-nome" type="text" placeholder="Digite o nome do seu paciente">
+          </fieldset>
+          <fieldset>
+            <label for="peso">Peso:</label>
+            <input id="campo-peso" type="text" placeholder="Digite o peso do seu paciente">
+          </fieldset>
+          <fieldset>
+            <label for="altura">Altura:</label>
+            <input id="campo-altura" type="text" placeholder="Digite a altura do seu paciente">
+          </fieldset>
+        </form>
+        <button id="adicionar-paciente" class="botao bto-principal" onclick="inserir();">Adicionar</button>
+      </section>
+    </main>
+    <script src="calcula-imc.js">
+
+    </script>
+  </body>
+</html>
