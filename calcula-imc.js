@@ -1,8 +1,8 @@
-// peso / altura * altura
+/* 
 
-//prompt() é um alert com entrada de dados
+  Autor: Lucas Porto
 
-// variavel global já é o DOM
+*/
 
 function inserir() {
   var nome = document.getElementById("campo-nome").value;
@@ -12,18 +12,18 @@ function inserir() {
 
   var antigo = document.getElementById('pacientes').innerHTML;
 
-  var novo = '<tr id="paciente' + document.getElementById("pacientes").children[0].children.length + '"> <td id="info-nome">' + nome + '</td> <td id="info-peso">' + peso + '</td> <td id="info-altura">' + altura + '</td> <td id="info-imc">' + imc + '</td> </tr>'
-
-  //document.getElementById('info-nome').textContent = nome;
-  //document.getElementById('info-peso').textContent = peso;
-  //document.getElementById('info-altura').textContent = altura;
-  //document.getElementById('info-imc').textContent = imc;
+  var novo = '<tr id="paciente' + document.getElementById("pacientes").children.length + '">' +
+             '<td id="info-nome">' + nome + '</td>' +
+             '<td id="info-peso">' + peso + '</td>' +
+             '<td id="info-altura">' + altura + '</td>' + 
+             '<td id="info-imc">' + imc + '</td>' + 
+             '<td> <button id="delPaciente' + document.getElementById("pacientes").children.length + '" class="botao bto-principal" onclick="excluir();">Excluir</button> </td> </tr>'
 
   var novo = antigo + novo;
   document.getElementById('pacientes').innerHTML = novo;
 
-  // joga tr aqui dentro
-  //document.getElementById("pacientes").children[0].children[]
-  //Mostra no console do navegador, como se fosse um print
+}
 
+function excluir() {
+  alert("funcionando");
 }
