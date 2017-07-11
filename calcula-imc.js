@@ -17,20 +17,27 @@ function inserir() {
              '<td id="info-peso">' + peso + '</td>' +
              '<td id="info-altura">' + altura + '</td>' + 
              '<td id="info-imc">' + imc + '</td>' + 
-             '<td> <button id="paciente' + document.getElementById("pacientes").children.length + '" class="botao bto-principal" onclick="alert("zxasd");">Excluir</button> </td> </tr>'
+             '<td> <button id="paciente' + document.getElementById("pacientes").children.length + '" class="botao bto-principal" onclick="excluir(paciente' + document.getElementById("pacientes").children.length + ');">Excluir</button> </td>' + 
+             '<td> <button id="paciente' + document.getElementById("pacientes").children.length + '" class="botao bto-principal" onclick="editar(paciente' + document.getElementById("pacientes").children.length + ');">Editar</button> </td> </tr>'
 
   var novo = antigo + novo;
   document.getElementById('pacientes').innerHTML = novo;
 
 }
 
- 
-$(document).ready(function()
-{
-    for (var i = 0; i <= document.getElementById("pacientes").children.length; i++) {    
-      $('paciente' + i).click(function() {
-          var aux = $('paciente' + i);
-          aux.remove();
-      });
-    }
-});  
+function excluir(aux) {
+  aux.remove();
+}
+
+function editar(aux) {
+  var nome = prompt("Digite o nome:");
+  var peso = prompt("Digite o peso:");
+  var altura = prompt("Digite o altura:");
+
+  aux.children[0].innerHTML = nome;
+  aux.children[1].innerHTML = peso;
+  aux.children[2].innerHTML = altura;
+  aux.children[3].innerHTML = peso / (altura * altura);
+
+}
+
