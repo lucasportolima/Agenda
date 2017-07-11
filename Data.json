@@ -1,0 +1,10 @@
+// Estrutra JSON.
+{
+	'pacientes':
+		[
+			{'id': 1, 'nome': 'Lucas', 'peso': '80', 'altura': '1.85'},
+			{'id': 2, 'nome': 'Fulano', 'peso': '90', 'altura': '1.75'},
+			{'id': 3, 'nome': 'Ciclano', 'peso': '95', 'altura': '1.90'},
+			{'id': 4, 'nome': 'Deltrano', 'peso': '75', 'altura': '1.70'}
+		]
+}
