@@ -17,17 +17,16 @@
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
+
     <link rel="stylesheet" type="text/css" href="style.css">
     
   </head>
-  <body onload="view();">
-    <header>
-      <div class="">
+  <body>
+    <header class="cabecalho">
         <h1>Meus pacientes</h1>
-      </div>
     </header>
-    <main class="">
-      <section>
+    <main class="principal">
+      <section class="sessoes">
         <h2>Meus pacientes</h2>
         <table id="pacientes">
           <tr>
@@ -41,9 +40,9 @@
         </table>
         <button id="calcula-imcs" class="botao">Calcular Imcs</button>
       </section>
-      <section>
+      <section class="sessoes">
         <h2>Adicionar novo paciente</h2>
-        <form>
+        <form class="forms">
           <fieldset>
             <label for="nome">Nome:</label>
             <input id="campo-nome" type="text" placeholder="Digite o nome do seu paciente">
@@ -60,6 +59,6 @@
         <button id="adicionar-paciente" class="botao bto-principal" onclick="inserir();">Adicionar</button>
       </section>
     </main>
-    
+    <div id="mapid"></div>
   </body>
 </html>
