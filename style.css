@@ -15,4 +15,25 @@ main{
 	top: 15%;
 }
 
-#mapid { height: 180px; }
+/*Mudar o cor do texto dos input*/
+input{
+	color: black;
+}
+
+table {
+    border-spacing: 15px;
+    border-collapse: separate;
+}
+
+.sessao-pacientes{
+	width: 100%;
+}
+
+.sessao-formulario{
+	width: 100%;
+}
+
+.principal {
+    display: flex;
+    padding: 3%;
+}
