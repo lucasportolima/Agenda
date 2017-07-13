@@ -1,4 +1,4 @@
-/* 
+/*
 
   Autor: Lucas Porto
 
@@ -6,19 +6,12 @@
 
 function view(aux) {
 
-  if (aux == "limpar") {
-    document.getElementById("campo-nome").style["border-color"] = "none";
-    alert("deu certo");
-  }
-
-  if (document.getElementById("pacientes").children.length < 3){
-
     // Resgatar valores.
     view.prototype.resgatarValores = function(){
       $('#resultado').html('Carregando dados...');
 
       $.getJSON('Data.json', function(data){
-    
+
         for (var i = 0; i < data.pacientes.length; i++){
 
           var id = data.pacientes[i].id;
@@ -33,9 +26,9 @@ function view(aux) {
                      '<td id="info-id">' + id + '</td>' +
                      '<td id="info-nome">' + nome + '</td>' +
                      '<td id="info-peso">' + peso + '</td>' +
-                     '<td id="info-altura">' + altura + '</td>' + 
-                     '<td id="info-imc">' + imc + '</td>' + 
-                     '<td> <button id="paciente' + document.getElementById("pacientes").children.length + '" class="botao bto-principal" onclick="excluir(paciente' + document.getElementById("pacientes").children.length + ');">Excluir</button> </td>' + 
+                     '<td id="info-altura">' + altura + '</td>' +
+                     '<td id="info-imc">' + imc + '</td>' +
+                     '<td> <button id="paciente' + document.getElementById("pacientes").children.length + '" class="botao bto-principal" onclick="excluir(paciente' + document.getElementById("pacientes").children.length + ');">Excluir</button> </td>' +
                      '<td> <button id="paciente' + document.getElementById("pacientes").children.length + '" class="botao bto-principal" onclick="editar(paciente' + document.getElementById("pacientes").children.length + ');">Editar</button> </td> </tr>'
 
           var novo = antigo + novo;
@@ -43,11 +36,7 @@ function view(aux) {
 
         }
       });
-
     }
-  }
-
-
 }
 
 var obj = new view();
@@ -80,9 +69,9 @@ function inserir() {
              '<td id="info-id">' + id + '</td>' +
              '<td id="info-nome">' + nome + '</td>' +
              '<td id="info-peso">' + peso + '</td>' +
-             '<td id="info-altura">' + altura + '</td>' + 
-             '<td id="info-imc">' + imc + '</td>' + 
-             '<td> <button id="paciente' + document.getElementById("pacientes").children.length + '" class="botao bto-principal" onclick="excluir(paciente' + document.getElementById("pacientes").children.length + ');">Excluir</button> </td>' + 
+             '<td id="info-altura">' + altura + '</td>' +
+             '<td id="info-imc">' + imc + '</td>' +
+             '<td> <button id="paciente' + document.getElementById("pacientes").children.length + '" class="botao bto-principal" onclick="excluir(paciente' + document.getElementById("pacientes").children.length + ');">Excluir</button> </td>' +
              '<td> <button id="paciente' + document.getElementById("pacientes").children.length + '" class="botao bto-principal" onclick="editar(paciente' + document.getElementById("pacientes").children.length + ');">Editar</button> </td> </tr>'
 
   var novo = antigo + novo;
@@ -98,22 +87,36 @@ function excluir(aux) {
 //arrumar id do editar
 function editar(aux) {
   var nome = prompt("Digite o nome:");
-  var peso = prompt("Digite o peso:");
-  var altura = prompt("Digite o altura:");
+  if (nome != null) {
+      aux.children[1].innerHTML = nome;
+  }
 
-  aux.children[0].innerHTML = nome;
-  aux.children[1].innerHTML = peso;
-  aux.children[2].innerHTML = altura;
-  aux.children[3].innerHTML = peso / (altura * altura);
+  var peso = prompt("Digite o peso:");
+  if (peso != null) {
+      aux.children[2].innerHTML = peso;
+  }else {
+      peso = parseFloat(aux.children[2].innerHTML);
+  }
+
+  var altura = prompt("Digite o altura:");
+  if (altura != null) {
+      aux.children[3].innerHTML = altura;
+  }else {
+      altura = parseFloat(aux.children[3].innerHTML);
+  }
+
+  aux.children[4].innerHTML = peso / (altura * altura);
+
+
 
 }
 
 // function getPosition(){
 //   // Verifica se o browser do usuario tem suporte a geolocation
 //   if ( navigator.geolocation ){
-//     navigator.geolocation.getCurrentPosition( 
+//     navigator.geolocation.getCurrentPosition(
 
-//     // sucesso! 
+//     // sucesso!
 //     function( posicao ){
 //       alert( posicao.coords.latitude, posicao.coords.longitude );
 //     },
